@@ -2,7 +2,7 @@ FROM quantumgears/ai-dev:flask-ai-code-v1
 
 ENV BASE_DIR  "/root/flask"
 
-# copy model data to image
+# copy model data to image with model of interest
 COPY ./word2vec* $BASE_DIR/gensim-data/
 COPY ./*.py $BASE_DIR
 
