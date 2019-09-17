@@ -8,6 +8,7 @@ COPY ./*.py $BASE_DIR
 WORKDIR $BASE_DIR
 EXPOSE 8080
 
+# Hello Riz
 ENV TOPIC_MODEL 'True'
 ENV NLTK_DATA $BASE_DIR/nlp/nltk_data
 CMD ["python", "quanta_pretrained.py"]
