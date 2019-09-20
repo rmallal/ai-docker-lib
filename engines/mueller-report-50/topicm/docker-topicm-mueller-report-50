@@ -1,4 +1,4 @@
-FROM quantumgears/ai-dev:flask-ai-code-v1
+FROM quantumgears/ai-dev:flask-ai-code-v2
 
 ENV BASE_DIR  "/root/flask"
 
