@@ -7,7 +7,7 @@ COPY ./topicm* $BASE_DIR/gensim-data/
 WORKDIR $BASE_DIR
 EXPOSE 8080
 
-# Hello Riz
+# Hello RizM
 ENV TOPIC_MODEL 'True'
 ENV NLTK_DATA $BASE_DIR/nlp/nltk_data
 CMD ["python", "quanta_main.py"]
