@@ -1,14 +1,12 @@
 FROM quantumgears/ai-dev:flask-ai-code-v2
 
-ENV BASE_DIR  "/root/flask"
+ENV BASE_DIR  "/root/flask/ai-prod/quanta"
 
-# copy model data to image
-COPY ./word2vec* $BASE_DIR/gensim-data/
-COPY ./*.py $BASE_DIR
+COPY ./embed* $BASE_DIR/gensim-data/
+COPY ./sentm* $BASE_DIR/gensim-data/
 
 WORKDIR $BASE_DIR
 EXPOSE 8080
 
-#ENV TOPIC_MODEL 'True'
 ENV NLTK_DATA $BASE_DIR/nlp/nltk_data
-CMD ["python", "quanta_pretrained.py"]
+CMD ["python", "quanta_main.py"]
