@@ -1,14 +1,14 @@
 FROM quantumgears/ai-dev:flask-base-v1
 
-ENV BASE_DIR  "/root/flask"
+ENV BASE_DIR  "/ai-prod/quanta"
+#RUN mkdir $BASE_DIR
 
-RUN mkdir $BASE_DIR $BASE_DIR/gensim-data $BASE_DIR/ai $BASE_DIR/swagger $BASE_DIR/nlp $BASE_DIR/splunk_api
-
-COPY quanta_main.py quanta_load.py quanta_global.py $BASE_DIR/
-COPY ai/*.py $BASE_DIR/ai/
-COPY swagger/* $BASE_DIR/swagger/
-COPY nlp $BASE_DIR/nlp/
-COPY splunk_api $BASE_DIR/splunk_api/
+RUN buildDeps='gcc libc6-dev python3-dev g++ git python-pip' \
+    && apt-get update \
+    && apt-get install -y $buildDeps --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/* \
+    && git clone https://26582c86ad80289d9e603ca954e791bf00e011d9:@github.com/rmallal/ai-prod.git \
+    && apt-get purge -y --auto-remove $buildDeps
 
 WORKDIR $BASE_DIR
 EXPOSE 8080

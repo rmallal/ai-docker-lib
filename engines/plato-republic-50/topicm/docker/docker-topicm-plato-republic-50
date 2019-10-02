@@ -1,6 +1,6 @@
 FROM quantumgears/ai-dev:flask-ai-code-v2
 
-ENV BASE_DIR  "/root/flask/ai-prod/quanta"
+ENV BASE_DIR  "/ai-prod/quanta"
 
 COPY ./topicm* $BASE_DIR/gensim-data/
 
