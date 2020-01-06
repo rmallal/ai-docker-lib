@@ -20,4 +20,8 @@ RUN buildDeps='gcc libc6-dev python3-dev g++ git python-pip' \
         html5lib>=0.01 \
         flasgger==0.9.2 \
         splunk-sdk>=1.0.0 \
+        pillow>=7.0.0 \
+        pytesseract>=0.3.0 \
+        pdf2image>=1.11.0 \
+        pyPDF2>=1.26.0 \
     && apt-get purge -y --auto-remove $buildDeps
