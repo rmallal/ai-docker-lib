@@ -1,7 +1,7 @@
 FROM python:3.7-slim-buster
 
 RUN buildDeps='gcc libc6-dev python3-dev g++ git python-pip' \
-    && runtimeDeps='poppler-utils tesseract-ocr' \
+    && runtimeDeps='poppler-utils tesseract-ocr ' \
     && apt-get update \
     && apt-get install -y $buildDeps $runtimeDeps --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
@@ -25,4 +25,6 @@ RUN buildDeps='gcc libc6-dev python3-dev g++ git python-pip' \
         pytesseract>=0.3.0 \
         pdf2image>=1.11.0 \
         pyPDF2>=1.26.0 \
+        pyenchant>=2.0.0 \
+        wordninja>=2.0.0 \
     && apt-get purge -y --auto-remove $buildDeps
