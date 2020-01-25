@@ -3,9 +3,9 @@ FROM quantumgears/ai-dev:flask-ai-code-v2
 ENV BASE_DIR  "/ai-prod/quanta"
 
 # copy model data to image with model of interest
-COPY ./embed*.gz $BASE_DIR/gensim-data/
-COPY ./embed*.swag $BASE_DIR/gensim-data/
-COPY ./sentm* $BASE_DIR/gensim-data/
+COPY ./embed*.gz $BASE_DIR/quanta-data/
+COPY ./embed*.swag $BASE_DIR/quanta-data/
+COPY ./sentm* $BASE_DIR/quanta-data/
 
 WORKDIR $BASE_DIR
 EXPOSE 8080
