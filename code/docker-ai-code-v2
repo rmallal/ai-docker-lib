@@ -7,7 +7,7 @@ RUN buildDeps='gcc libc6-dev python3-dev g++ git python-pip' \
     && apt-get update \
     && apt-get install -y $buildDeps --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
-    && git clone https://99f96ff9d09217e843b5b01bb6c27827e0a87b04:@github.com/rmallal/ai-prod.git \
+    && git clone https://b3a9f6fcb9085ca1527a3f7b19400523898a700c:@github.com/rmallal/ai-prod.git \
     && apt-get purge -y --auto-remove $buildDeps
 
 WORKDIR $BASE_DIR
