@@ -1,0 +1,14 @@
+runtime: custom
+env: flex
+service: quanta-test400 
+ 
+readiness_check:
+  app_start_timeout_sec: 4000
+
+manual_scaling:
+  instances: 4
+
+resources:
+  cpu: 2 
+  memory_gb: 6.0
+  disk_size_gb: 60
