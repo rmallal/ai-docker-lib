@@ -1,13 +1,16 @@
-FROM  quantumgears/ai-dev:flask-ai-code-v2
+FROM  quantumgears/ai-dev:flask-ai-code-v2 
 
 ENV BASE_DIR  "/ai-prod/quanta"
 WORKDIR $BASE_DIR
 
+ADD Riz_GCloud_Auth.json ./
+
 EXPOSE 8080
+
 
 ENV QUANTA_PDF_PROCESSING_MODE 'singlethread_newprocess'
 ENV QUANTA_PDF_PAGES_PER_CHUNK 5
-ENV QUANTA_GCLOUD_SUB 'rizsub'
+ENV QUANTA_GCLOUD_SUB 'mysub'
 ENV QUANTA_GCLOUD_PROJID 'ml-dev-0001'
 ENV OMP_THREAD_LIMIT 1
 ENV QUANTA_GCLOUD_SERVICES 'True'
