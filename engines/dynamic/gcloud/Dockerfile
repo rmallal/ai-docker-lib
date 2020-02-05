@@ -3,7 +3,7 @@ FROM  quantumgears/ai-dev:flask-ai-code-v2
 ENV BASE_DIR  "/ai-prod/quanta"
 WORKDIR $BASE_DIR
 
-ADD Riz_GCloud_Auth.json ./
+ADD GCloud_Auth.json ./
 
 EXPOSE 8080
 

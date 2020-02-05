@@ -1,12 +1,12 @@
 runtime: custom
 env: flex
-service: quanta-test400 
+service: default 
  
 readiness_check:
   app_start_timeout_sec: 4000
 
 manual_scaling:
-  instances: 4
+  instances: 1 
 
 resources:
   cpu: 2 
