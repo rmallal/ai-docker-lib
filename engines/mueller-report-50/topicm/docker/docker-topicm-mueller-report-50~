@@ -1,0 +1,13 @@
+FROM quantumgears/ai-dev:flask-ai-code-v2
+
+ENV BASE_DIR  "/ai-prod/quanta"
+
+COPY ./topicm* $BASE_DIR/gensim-data/
+RUN  rm -f $BASE_DIR/gensim-data/topicm*.tar
+
+WORKDIR $BASE_DIR
+EXPOSE 8080
+
+ENV TOPIC_MODEL 'True'
+ENV NLTK_DATA $BASE_DIR/nlp/nltk_data
+CMD ["python", "quanta_main.py"]
