@@ -3,7 +3,7 @@ FROM quantumgears/ai-dev:flask-ai-code-v2
 ENV BASE_DIR  "/ai-prod/quanta"
 
 COPY ./topicm* $BASE_DIR/quanta-data/
-RUN  rm -f $BASE_DIR/gensim-data/topicm*.tar
+RUN  rm -f $BASE_DIR/quanta-data/topicm*.tar
 
 WORKDIR $BASE_DIR
 EXPOSE 8080
