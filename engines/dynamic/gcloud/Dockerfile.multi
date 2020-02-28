@@ -1,0 +1,22 @@
+FROM  quantumgears/ai-dev:flask-ai-code-v2 
+
+ENV BASE_DIR  "/ai-prod/quanta"
+WORKDIR $BASE_DIR
+
+ADD GCloud_Auth.json ./
+
+EXPOSE 8080
+
+
+#ENV QUANTA_PDF_PROCESSING_MODE 'singlethread_newprocess'
+ENV QUANTA_ENABLE_PDF_URIS_EXTRACT 'True'
+ENv QUANTA_MAX_URIS_EXTRACT 20
+ENV QUANTA_PDF_PROCESSING_MODE 'multiprocess'
+ENV QUANTA_PDF_PAGES_PER_CHUNK 5
+ENV QUANTA_GCLOUD_SUB 'mysub'
+ENV QUANTA_GCLOUD_PROJID 'ml-dev-0001'
+ENV OMP_THREAD_LIMIT 1
+ENV QUANTA_GCLOUD_SERVICES 'True'
+ENV GOOGLE_APPLICATION_CREDENTIALS '/ai-prod/quanta/GCloud_Auth.json'
+ENV NLTK_DATA $BASE_DIR/nlp/nltk_data
+CMD python quanta_main.py
