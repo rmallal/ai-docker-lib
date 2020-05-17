@@ -31,5 +31,6 @@ RUN buildDeps='gcc libc6-dev python3-dev g++ git python-pip' \
 	google-cloud-storage>=1.25.0 \
 	google-cloud-pubsub>=1.1.0 \
 	google-cloud-resource-manager>=0.30.0 \
+	google-cloud-monitoring==0.36.0 \
     && python -m spacy download en \	
     && apt-get purge -y --auto-remove $buildDeps
