@@ -25,6 +25,7 @@ RUN buildDeps='gcc libc6-dev python3-dev g++ git python-pip' \
         pytesseract==0.3.2 \
         pdf2image==1.11.0 \
         pyPDF2==1.26.0 \
+	pikepdf==1.16.1 \
         pyenchant==2.0.0 \
         wordninja==2.0.0 \
 	pyspellchecker==0.5.3 \
